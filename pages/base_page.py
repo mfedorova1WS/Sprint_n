@@ -11,6 +11,11 @@ class BasePage:
             EC.presence_of_element_located(locator)
         )
 
+    def find_all(self, locator, timeout=10):
+        return WebDriverWait(self.driver, timeout).until(
+            EC.presence_of_all_elements_located(locator)
+        )
+
     def find_and_wait_for_text(self, locator, text, timeout=10):
         element = WebDriverWait(self.driver, timeout).until(
             EC.text_to_be_present_in_element(locator, text)

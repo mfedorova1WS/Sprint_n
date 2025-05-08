@@ -11,3 +11,11 @@ def driver():
     driver.implicitly_wait(10)
     yield driver
     driver.quit()
+
+@pytest.fixture
+def address_1():
+    return "Хамовнический вал, 34"
+
+@pytest.fixture
+def address_2():
+    return "Зубовский бульвар, 37"
